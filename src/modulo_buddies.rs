@@ -35,8 +35,9 @@ fn backtrack(nums: Vec<u32>) -> Vec<u32> {
         }
         if current.len() >= output.len() {*output = current;}
     };
-
-    recursive_call(Vec::new(), 0, &mut output, &nums);
+    for i in 0..nums.len() - 1 { //check only up the penultimate item
+        recursive_call(Vec::new(), i, &mut output, &nums);
+    }
 
     output
 }
