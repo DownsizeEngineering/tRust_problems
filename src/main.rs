@@ -1,7 +1,8 @@
 // mod min_edits;
 // mod modulo_buddies;
 // mod dijkstra_preflight;
-mod which_permutation;
+// mod which_permutation;
+mod arranging_coins;
 
 fn main() {
     // min_edits::run();
@@ -15,5 +16,6 @@ fn main() {
         (4, 5, 1)], 
 
         (0,5,4) );*/
-        println!("{}", which_permutation::run(9,500));
+        // println!("{}", which_permutation::run(9,500));
+        println!("{}", arranging_coins::run());
 }
