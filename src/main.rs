@@ -3,7 +3,8 @@
 // mod dijkstra_preflight;
 // mod which_permutation;
 // mod arranging_coins;
-mod level_order_traversal;
+// mod level_order_traversal;
+mod hamming_distance;
 
 fn main() {
     // min_edits::run();
@@ -19,5 +20,6 @@ fn main() {
         (0,5,4) );*/
     // println!("{}", which_permutation::run(9,500));
     // println!("{}", arranging_coins::run());
-    println!("{:?}", level_order_traversal::run());
+    // println!("{:?}", level_order_traversal::run());
+    println!("{}", hamming_distance::run(1,4));
 }
