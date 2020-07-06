@@ -4,7 +4,8 @@
 // mod which_permutation;
 // mod arranging_coins;
 // mod level_order_traversal;
-mod hamming_distance;
+// mod hamming_distance;
+mod big_add_one;
 
 fn main() {
     // min_edits::run();
@@ -21,5 +22,6 @@ fn main() {
     // println!("{}", which_permutation::run(9,500));
     // println!("{}", arranging_coins::run());
     // println!("{:?}", level_order_traversal::run());
-    println!("{}", hamming_distance::run(1,4));
+    // println!("{}", hamming_distance::run(1,4));
+    println!("{:?}", big_add_one::run());
 }
