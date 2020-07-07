@@ -5,8 +5,8 @@
 // mod arranging_coins;
 // mod level_order_traversal;
 // mod hamming_distance;
-mod big_add_one;
-
+// mod big_add_one;
+mod island_perimeter;
 fn main() {
     // min_edits::run();
     // println!("{:?}", modulo_buddies::run(vec![2, 3, 5, 7, 11, 13, 17, 19]));
@@ -23,5 +23,6 @@ fn main() {
     // println!("{}", arranging_coins::run());
     // println!("{:?}", level_order_traversal::run());
     // println!("{}", hamming_distance::run(1,4));
-    println!("{:?}", big_add_one::run());
+    // println!("{:?}", big_add_one::run());
+    println!("{}", island_perimeter::run());
 }
