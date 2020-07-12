@@ -9,6 +9,7 @@
 // mod island_perimeter;
 // mod three_sum;
 // mod width_of_binary_tree;
+mod power_set;
 fn main() {
     // min_edits::run();
     // println!("{:?}", modulo_buddies::run(vec![2, 3, 5, 7, 11, 13, 17, 19]));
@@ -29,4 +30,5 @@ fn main() {
     // println!("{}", island_perimeter::run());
     // println!("{:?}", three_sum::run());
     // println!("{}", width_of_binary_tree::run());
-}
+    println!("{:?}", power_set::run());
+}   
