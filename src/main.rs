@@ -10,7 +10,8 @@
 // mod three_sum;
 // mod width_of_binary_tree;
 // mod power_set;
-mod is_same_tree;
+// mod is_same_tree;
+mod angle_clock;
 fn main() {
     // min_edits::run();
     // println!("{:?}", modulo_buddies::run(vec![2, 3, 5, 7, 11, 13, 17, 19]));
@@ -32,5 +33,6 @@ fn main() {
     // println!("{:?}", three_sum::run());
     // println!("{}", width_of_binary_tree::run());
     // println!("{:?}", power_set::run());
-    println!("{}", is_same_tree::run());
+    // println!("{}", is_same_tree::run());
+    println!("{}", angle_clock::run());
 }   
