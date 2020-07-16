@@ -11,7 +11,8 @@
 // mod width_of_binary_tree;
 // mod power_set;
 // mod is_same_tree;
-mod angle_clock;
+// mod angle_clock;
+mod reverse_words;
 fn main() {
     // min_edits::run();
     // println!("{:?}", modulo_buddies::run(vec![2, 3, 5, 7, 11, 13, 17, 19]));
@@ -34,5 +35,6 @@ fn main() {
     // println!("{}", width_of_binary_tree::run());
     // println!("{:?}", power_set::run());
     // println!("{}", is_same_tree::run());
-    println!("{}", angle_clock::run());
+    // println!("{}", angle_clock::run());
+    println!("{}", reverse_words::run());
 }   
