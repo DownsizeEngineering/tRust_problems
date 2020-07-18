@@ -13,7 +13,8 @@
 // mod is_same_tree;
 // mod angle_clock;
 // mod reverse_words;
-mod my_pow;
+// mod my_pow;
+mod k_freq_elements;
 fn main() {
     // min_edits::run();
     // println!("{:?}", modulo_buddies::run(vec![2, 3, 5, 7, 11, 13, 17, 19]));
@@ -38,5 +39,6 @@ fn main() {
     // println!("{}", is_same_tree::run());
     // println!("{}", angle_clock::run());
     // println!("{}", reverse_words::run());
-    println!("{}", my_pow::run());
+    // println!("{}", my_pow::run());
+    println!("{:?}", k_freq_elements::run());
 }   
