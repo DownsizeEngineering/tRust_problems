@@ -15,7 +15,8 @@
 // mod reverse_words;
 // mod my_pow;
 // mod k_freq_elements;
-mod course_prereqs;
+// mod course_prereqs;
+mod big_binary_add;
 fn main() {
     // min_edits::run();
     // println!("{:?}", modulo_buddies::run(vec![2, 3, 5, 7, 11, 13, 17, 19]));
@@ -42,5 +43,6 @@ fn main() {
     // println!("{}", reverse_words::run());
     // println!("{}", my_pow::run());
     // println!("{:?}", k_freq_elements::run());
-    println!("{:?}", course_prereqs::run());
+    // println!("{:?}", course_prereqs::run());
+    println!("{}", big_binary_add::run());
 }   
