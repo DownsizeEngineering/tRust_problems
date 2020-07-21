@@ -46,5 +46,5 @@ fn main() {
     // println!("{:?}", k_freq_elements::run());
     // println!("{:?}", course_prereqs::run());
     // println!("{}", big_binary_add::run());
-    println!("{}", remove_linked_list_els::run());
+    println!("{:?}", remove_linked_list_els::run());
 }   
