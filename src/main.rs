@@ -17,7 +17,8 @@
 // mod k_freq_elements;
 // mod course_prereqs;
 // mod big_binary_add;
-mod remove_linked_list_els;
+// mod remove_linked_list_els;
+mod word_search;
 fn main() {
     // min_edits::run();
     // println!("{:?}", modulo_buddies::run(vec![2, 3, 5, 7, 11, 13, 17, 19]));
@@ -46,5 +47,6 @@ fn main() {
     // println!("{:?}", k_freq_elements::run());
     // println!("{:?}", course_prereqs::run());
     // println!("{}", big_binary_add::run());
-    println!("{:?}", remove_linked_list_els::run());
+    // println!("{:?}", remove_linked_list_els::run());
+    println!("{}", word_search::run());
 }   
