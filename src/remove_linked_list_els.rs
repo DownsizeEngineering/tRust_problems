@@ -22,23 +22,25 @@ pub fn run() -> String {
     pub fn remove_elements(head: Option<Box<ListNode>>, val: i32) -> Option<Box<ListNode>> {
         let mut new_head = head;
         new_head = loop {
-            if let Some(node) = &new_head {
-                if node.val != val { break new_head; }
-                new_head = node.next.clone();
+            if let Some(node) = new_head {
+                if node.val != val { break Some(node); }
+                new_head = node.next;
             }
-            else { break None; }
+            else { return None; }
         };
 
         let mut node_ptr = &mut new_head;
         while node_ptr != &None {
             if let Some(node) = &mut node_ptr {
+                // println!("node: {:?}", node);
                 if let Some(next) = &node.next {
                     if next.val == val {
                         node.next = next.next.clone();
                     }
                 }
-                *node_ptr = node.next.clone();
+                // println!("node after: {:?}", node);
             } 
+                node_ptr = &mut node_ptr.as_mut().unwrap().next;
         }
 
 
@@ -48,7 +50,7 @@ pub fn run() -> String {
     pub fn print_list (list: Option<Box<ListNode>>) -> String {
         let mut list = list;
         let mut output = String::new();
-
+        // println!("{:?}", list);
         while list != None {
             if let Some(node_ptr) = list {
                 let node = *node_ptr;
@@ -57,6 +59,8 @@ pub fn run() -> String {
                 list = node.next;
             }
         }
+        output.pop();
+        output.pop();
         output
     }
 
