@@ -18,7 +18,8 @@
 // mod course_prereqs;
 // mod big_binary_add;
 // mod remove_linked_list_els;
-mod word_search;
+// mod word_search;
+mod zig_zag_traversal;
 fn main() {
     // min_edits::run();
     // println!("{:?}", modulo_buddies::run(vec![2, 3, 5, 7, 11, 13, 17, 19]));
@@ -48,5 +49,6 @@ fn main() {
     // println!("{:?}", course_prereqs::run());
     // println!("{}", big_binary_add::run());
     // println!("{:?}", remove_linked_list_els::run());
-    println!("{}", word_search::run());
+    // println!("{}", word_search::run());
+    println!("{:?}", zig_zag_traversal::run());
 }   
