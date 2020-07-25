@@ -20,7 +20,8 @@
 // mod remove_linked_list_els;
 // mod word_search;
 // mod zig_zag_traversal;
-mod single_number_iii;
+// mod single_number_iii;
+mod paths_to_target;
 fn main() {
     // min_edits::run();
     // println!("{:?}", modulo_buddies::run(vec![2, 3, 5, 7, 11, 13, 17, 19]));
@@ -52,5 +53,6 @@ fn main() {
     // println!("{:?}", remove_linked_list_els::run());
     // println!("{}", word_search::run());
     // println!("{:?}", zig_zag_traversal::run());
-    println!("{:?}", single_number_iii::run());
+    // println!("{:?}", single_number_iii::run());
+    println!("{:?}", paths_to_target::run());
 }   
