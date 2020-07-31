@@ -22,7 +22,8 @@
 // mod zig_zag_traversal;
 // mod single_number_iii;
 // mod paths_to_target;
-    mod add_digits;
+// mod add_digits;
+mod CharTrie;
 fn main() {
     // min_edits::run();
     // println!("{:?}", modulo_buddies::run(vec![2, 3, 5, 7, 11, 13, 17, 19]));
@@ -56,5 +57,6 @@ fn main() {
     // println!("{:?}", zig_zag_traversal::run());
     // println!("{:?}", single_number_iii::run());
     // println!("{:?}", paths_to_target::run());
-    println!("{}", add_digits::run());
+    // println!("{}", add_digits::run());
+    
 }   
