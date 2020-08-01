@@ -25,6 +25,12 @@ impl CharTrieNode {
         self.end = true;
     }
 
+    pub fn is_end(&self) -> bool { return self.end; }
+
+    pub fn step(&self, c: char) -> Option<Box<CharTrieNode>> {
+        None
+    }
+
     fn insert(&mut self, string: &str) {
         if string.len() == 0 { return self.end(); }
 
@@ -60,7 +66,10 @@ impl CharTrie {
     }
 
     pub fn step(&self, c: char) -> Option<Box<CharTrieNode>> {
-        None
+        if let Some(node) = self.children.get(&c) {
+            // return Some(Box::clone(&node));
+            return None;
+        } else { return None; }
     }
 
     pub fn new(words: Vec<String>) -> CharTrie {
