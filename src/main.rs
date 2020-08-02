@@ -58,5 +58,5 @@ fn main() {
     // println!("{:?}", single_number_iii::run());
     // println!("{:?}", paths_to_target::run());
     // println!("{}", add_digits::run());
-    
+    CharTrie::run();
 }   
