@@ -103,11 +103,31 @@ impl CharTrie {
     }
 }
 
+pub fn search(phrase: &str, dictionary: Vec<String>) -> Vec<Vec<String>> {
+    let mut output = Vec::new();
+    let dictionary = CharTrie::new(dictionary);
+
+    fn recurse(
+        phrase: &str, 
+        words: Vec<String>,
+        output: &mut Vec<Vec<String>>,
+        dictionary: &CharTrie) {
+        if phrase.is_empty() { return output.push(words); }
+        let mut word = String::new();
+        for char in phrase.chars() {
+            word.push(char);
+        }
+    }
+
+    output
+}
+
 pub fn run() {
-    let trie = CharTrie::new(vec![String::from("banana")]);
-    println!("tc {:?}", trie.children);
-    let a = trie.step('b').unwrap();
+    let trie = CharTrie::new(vec![String::from("banana"), String::from("ban")]);
+    let mut a = trie.step('b').unwrap();
     println!("a {}", a.val);
-    let b = a.step('a').unwrap();
-    let c = b.step('n');
+    a = a.step('a').unwrap();
+    a = a.step('n').unwrap();
+    println!("c: {:?}", a);
+    println!("tc {:?}", trie.children);
 }
