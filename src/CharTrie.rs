@@ -114,9 +114,18 @@ pub fn search(phrase: &str, dictionary: Vec<String>) -> Vec<Vec<String>> {
         dictionary: &CharTrie) {
         if phrase.is_empty() { return output.push(words); }
         let mut word = String::new();
-        for char in phrase.chars() {
-            word.push(char);
+
+        let mut chars = phrase.chars();
+        let mut step = dictionary.step(chars.next().unwrap());
+        let mut steps: usize = 1;
+        if let Some(node) = step {
+            word.push(node.val);
+            for char in chars {
+                word.push(char);
+
+            }            
         }
+
     }
 
     output
