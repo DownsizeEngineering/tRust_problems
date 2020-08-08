@@ -109,7 +109,7 @@ pub fn search(phrase: &str, dictionary: Vec<String>) -> Vec<Vec<String>> {
 
     fn recurse(
         phrase: &str, 
-        words: Vec<String>,
+        mut words: Vec<String>,
         output: &mut Vec<Vec<String>>,
         dictionary: &CharTrie) {
         if phrase.is_empty() { return output.push(words); }
@@ -120,11 +120,36 @@ pub fn search(phrase: &str, dictionary: Vec<String>) -> Vec<Vec<String>> {
         let mut steps: usize = 1;
         if let Some(node) = step {
             word.push(node.val);
+            if node.is_end() {
+                let mut words = words.clone();
+                words.push(word.clone());
+                recurse(
+                    &phrase[steps..phrase.len() - 1], 
+                    words, 
+                    output, 
+                    dictionary
+                );
+            }
+
             for char in chars {
                 word.push(char);
+                steps += 1;
+                if node.is_end() {
+                    let mut words = words.clone();
+                    words.push(word.clone());
+                    recurse(
+                        &phrase[steps..phrase.len() - 1],
+                        words,
+                        output,
+                        dictionary
+                    );
+                }
 
             }            
         }
+        else { return; }
+
+        
 
     }
 
@@ -132,11 +157,17 @@ pub fn search(phrase: &str, dictionary: Vec<String>) -> Vec<Vec<String>> {
 }
 
 pub fn run() {
-    let trie = CharTrie::new(vec![String::from("banana"), String::from("ban")]);
-    let mut a = trie.step('b').unwrap();
-    println!("a {}", a.val);
-    a = a.step('a').unwrap();
-    a = a.step('n').unwrap();
-    println!("c: {:?}", a);
-    println!("tc {:?}", trie.children);
+    // let trie = CharTrie::new(vec![String::from("banana"), String::from("ban")]);
+    // let mut a = trie.step('b').unwrap();
+    // println!("a {}", a.val);
+    // a = a.step('a').unwrap();
+    // a = a.step('n').unwrap();
+    // println!("c: {:?}", a);
+    // println!("tc {:?}", trie.children);
+
+    let words = vec![String::from("re"), String::from("dc"), String::from("at"),
+     String::from("red"), String::from("cat"), String::from("a"), 
+     String::from("r")];
+    let phrase = "redcat";
+    println!("{:?}", search(phrase, words));
 }
