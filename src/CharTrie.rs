@@ -101,6 +101,19 @@ impl CharTrie {
         for word in words { output.insert(word); }
         output
     }
+
+    pub fn contains(&self, string: &str) -> bool {
+        if string.len() == 0 && self.end { return true; }
+
+        let c: char = string[0..1].parse().unwrap();
+        let string = &string[1..];
+
+        if let Some(node) = self.children.get(&c) {
+            return node.contains(string);
+        }
+
+        return false;
+    }
 }
 
 pub fn search(phrase: &str, dictionary: Vec<String>) -> Vec<Vec<String>> {
@@ -112,6 +125,8 @@ pub fn search(phrase: &str, dictionary: Vec<String>) -> Vec<Vec<String>> {
         mut words: Vec<String>,
         output: &mut Vec<Vec<String>>,
         dictionary: &CharTrie) {
+        println!("phrase: {} words:{:?}, ", phrase, words);
+
         if phrase.is_empty() { return output.push(words); }
         let mut word = String::new();
 
@@ -124,7 +139,7 @@ pub fn search(phrase: &str, dictionary: Vec<String>) -> Vec<Vec<String>> {
                 let mut words = words.clone();
                 words.push(word.clone());
                 recurse(
-                    &phrase[steps..phrase.len() - 1], 
+                    &phrase[steps..phrase.len()], 
                     words, 
                     output, 
                     dictionary
@@ -134,15 +149,18 @@ pub fn search(phrase: &str, dictionary: Vec<String>) -> Vec<Vec<String>> {
             for char in chars {
                 word.push(char);
                 steps += 1;
-                if node.is_end() {
-                    let mut words = words.clone();
-                    words.push(word.clone());
-                    recurse(
-                        &phrase[steps..phrase.len() - 1],
-                        words,
-                        output,
-                        dictionary
-                    );
+                if let Some(node) = node.step(char) {
+                    
+                    if node.is_end() {
+                        let mut words = words.clone();
+                        words.push(word.clone());
+                        recurse(
+                            &phrase[steps..phrase.len()],
+                            words,
+                            output,
+                            dictionary
+                        );
+                    }
                 }
 
             }            
@@ -153,6 +171,7 @@ pub fn search(phrase: &str, dictionary: Vec<String>) -> Vec<Vec<String>> {
 
     }
 
+    recurse(phrase, Vec::new(), &mut output, &dictionary);
     output
 }
 
@@ -169,5 +188,10 @@ pub fn run() {
      String::from("red"), String::from("cat"), String::from("a"), 
      String::from("r")];
     let phrase = "redcat";
+
+    // let trie = CharTrie::new(words);
+    // println!("{}", trie.contains("re"))
+
     println!("{:?}", search(phrase, words));
+    // println!("{}", &phrase[phrase.len()-1..phrase.len()])
 }
