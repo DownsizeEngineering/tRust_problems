@@ -24,7 +24,8 @@
 // mod paths_to_target;
 // mod add_digits;
 // mod CharTrie;
-mod median_two_arrays;
+// mod median_two_arrays;
+mod k_up_or_down;
 fn main() {
     // min_edits::run();
     // println!("{:?}", modulo_buddies::run(vec![2, 3, 5, 7, 11, 13, 17, 19]));
@@ -60,5 +61,6 @@ fn main() {
     // println!("{:?}", paths_to_target::run());
     // println!("{}", add_digits::run());
     // CharTrie::run();
-    median_two_arrays::run();
+    // median_two_arrays::run();
+    k_up_or_down::run();
 }   
